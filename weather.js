@@ -5,13 +5,19 @@ $(function() {
     // Put your code here to change the "markup" variable.
     // Don't change any other code in this file. You will be sad.
 
-    var markup = "The weather report shows that it is currently " + data.currently.summary + "with a temerpature of" + data.currently.temperature + " degrees.<br>The temperature feels like " + data.currently.apparentTemperature + " degrees.";
+    var markup = "The weather report shows that it is currently " + data.currently.summary + " with a temerpature of " + data.currently.temperature + " degrees."
+    var temp = "The temperature feels like " + data.currently.apparentTemperature + " degrees.";
     var forecast = "The three day forecast calls for " + data.daily.summary;
 
+    if (temp < 32) {
+      alert("Better dress warm!");
+    }
     // End of your code
 
     $('.weather-report').html(markup);
+    $('.weather-temp').html(temp);
     $('.weather-report2').html(forecast);
+    $('.friendly-reminder').html(greeting);
   }
   $('a.get-the-weather').on('click', function(event) {
     event.preventDefault();
